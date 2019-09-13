@@ -40,6 +40,7 @@ function SWCard(props) {
     });
   }, [props.data.films]);
 
+  console.log(`${props.data.name} was in: ${films}`);
   return (
     <CardDiv>
       <NameP>{props.data.name}</NameP>
