@@ -28,19 +28,17 @@ function SWCard(props) {
   }, [props.data.homeworld]);
 
   useEffect(() => {
-    let filmArr = [];
+    setFilms([]);
     props.data.films.forEach(film => {
       axios
         .get(film)
         .then(res => {
-          filmArr.push(res.data.title);
-          setFilms(filmArr);
+          setFilms(oldFilms => [...oldFilms, res.data.title]);
         })
         .catch(err => console.log(err));
     });
   }, [props.data.films]);
 
-  console.log(`${props.data.name} was in: ${films}`);
   return (
     <CardDiv>
       <NameP>{props.data.name}</NameP>

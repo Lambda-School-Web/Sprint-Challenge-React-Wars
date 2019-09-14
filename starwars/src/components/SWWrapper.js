@@ -12,7 +12,6 @@ const SWWrapper = props => {
   return (
     <>
       <WrapperDiv>
-        {console.log(props.data)}
         {props.data ? renderCards(props.data.results) : null}
       </WrapperDiv>
       <div>
